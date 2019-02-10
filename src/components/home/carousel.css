@@ -1,0 +1,26 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+.centerme {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 0.8em;
+  padding: 20px;
+}
+.caps {
+  margin: 0 auto;
+}
+.slick-prev:before,
+.slick-next:before {
+  color: red;
+}
+.slick-prev {
+  margin-left: 40px;
+  z-index: 1000;
+}
+
+.slick-next {
+  margin-right: 40px;
+  z-index: 1000;
+}
