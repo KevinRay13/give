@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getCart, addToCart } from "../../ducks/reducer";
 
 class Cart extends Component {
   constructor(props) {
@@ -49,4 +51,8 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+const mapStateToProps = state => state;
+export default connect(
+  mapStateToProps,
+  { getCart, addToCart }
+)(Cart);

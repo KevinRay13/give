@@ -15,8 +15,10 @@ app.use(cors());
 app.use(
   session({
     resave: true,
+
     saveUninitialized: false,
     secret: process.env.SESSION_SECRET,
+    //cart: [{}],
     cookie: {
       maxAge: 1000 * 60 * 60 * 24 * 7
     }
@@ -43,5 +45,7 @@ app.put("/admin/inventory/:id", prodCtrl.update);
 
 //inventory
 app.get("/inventory/products", prodCtrl.getAllProducts);
+app.post("/inventory/addToCart", prodCtrl.addToCart); //add to cart
+app.get("/inventory/cart", prodCtrl.getCart); //get current cart
 
 app.listen(5050, () => console.log(`listening on port ${5050}`));

@@ -1,3 +1,5 @@
+let cart = [];
+
 module.exports = {
   getAllProducts: (req, res, next) => {
     // const allProds = await req.app.get("db").get_products();
@@ -43,6 +45,24 @@ module.exports = {
     dbInstance
       .create_product([product_name, description, price, img_url])
       .then(() => res.sendStatus(200))
+      .catch(err => {
+        res.status(500).send({ errorMessage: "re ruh roh" });
+        console.log(err);
+      });
+  },
+  getCart: (req, res) => {
+    res.json(cart);
+  },
+  addToCart: (req, res) => {
+    const dbInstance = req.app.get("db");
+
+    dbInstance
+      .get_product(req.body.id)
+      .then(data => {
+        cart.push(data);
+
+        res.json(cart);
+      })
       .catch(err => {
         res.status(500).send({ errorMessage: "re ruh roh" });
         console.log(err);
