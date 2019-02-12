@@ -1,0 +1,54 @@
+.navbar-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  height: 10vh;
+  width: 100vw;
+  align-items: center;
+  margin: 0 auto;
+  text-decoration: none;
+}
+.linkmain {
+  color: #ce0814;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.link:active {
+  color: grey;
+}
+.link:visited {
+  color: #ce0814;
+}
+.navbar-links {
+  display: flex;
+  text-decoration: none;
+  justify-content: space-between;
+  padding: 0;
+  flex-wrap: wrap;
+
+  width: 20vw;
+  list-style-type: none;
+  font-size: 1.2em;
+}
+.link {
+  text-decoration: none;
+  text-decoration-line: none;
+  color: #ce0814;
+}
+.burger {
+  height: 2em;
+  width: 2em;
+  display: none;
+}
+.logo-container {
+  width: 20vw;
+}
+.cart-container {
+  width: 20vw;
+}
+.cart {
+  height: 2.5em;
+  width: 2.5em;
+}

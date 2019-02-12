@@ -12,6 +12,16 @@ const app = express();
 
 app.use(json());
 app.use(cors());
+app.use(
+  session({
+    resave: true,
+    saveUninitialized: false,
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 7
+    }
+  })
+);
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
@@ -20,17 +30,11 @@ massive(process.env.CONNECTION_STRING)
   })
   .catch(err => console.log(err));
 
-app.use(
-  session({
-    resave: true,
-    saveUninitialized: false,
-    secret: process.env.SESSION_SECRET
-  })
-);
 //user authentication
 app.post("/auth/register", authCtrl.register);
 app.post("/auth/login", authCtrl.login);
 app.get("/auth/logout", authCtrl.logout);
+app.get("/auth/user", authCtrl.getUser);
 
 //admin//
 app.delete("/admin/inventory/:id", prodCtrl.deleteProduct);

@@ -1,5 +1,5 @@
 module.exports = {
-  getAllProducts: (req, res) => {
+  getAllProducts: (req, res, next) => {
     // const allProds = await req.app.get("db").get_products();
     // return res.status(200).send(allProds);
     const dbInstance = req.app.get("db");

@@ -1,0 +1,19 @@
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 2em;
+}
+.popitems {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+  width: 70vw;
+  margin: 0 auto;
+  justify-content: space-evenly;
+}
+.caps {
+  height: 15em;
+  width: 15em;
+}

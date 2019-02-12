@@ -25,6 +25,17 @@ module.exports = {
       res.status(500).json(error);
     }
   },
+  // getUser: async (req, res) => {
+  //   const user = await req.app.get("db").get_user([req.session.user]);
+  //   return res.status(200).send(user);
+  // },
+  getUser: (req, res) => {
+    if (req.session.user) {
+      res.json(req.session.user);
+    } else {
+      res.status(401).json({ error: "please log in" });
+    }
+  },
   login: async (req, res) => {
     const { username, password } = req.body;
     const foundUser = await req.app.get("db").find_givers([username]);
