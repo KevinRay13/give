@@ -9,32 +9,6 @@ import Home from "./components/home/Home";
 import LogReg from "./components/login/LogReg";
 
 class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      shoppingCart: []
-    };
-
-    this.addToShoppingCart = this.addToShoppingCart.bind(this);
-    this.removeFromShoppingCart = this.removeFromShoppingCart.bind(this);
-  }
-
-  addToShoppingCart(product) {
-    this.setState({
-      shoppingCart: [...this.state.shoppingCart, product]
-    });
-    console.log(this.state.shoppingCart);
-  }
-
-  removeFromShoppingCart(product) {
-    let newShoppingCart = this.state.shoppingCart;
-    newShoppingCart.splice(newShoppingCart.indexOf(product), 1);
-    this.setState({
-      shoppingCart: newShoppingCart
-    });
-    console.log(this.state.shoppingCart);
-  }
   render() {
     return (
       <div className="App">
@@ -45,18 +19,13 @@ class App extends Component {
           <Route
             path="/shop"
             render={() => {
-              return <Products addToShoppingCart={this.addToShoppingCart} />;
+              return <Products />;
             }}
           />
           <Route
             path="/shoppingcart"
             render={() => {
-              return (
-                <ShoppingCart
-                  shoppingCart={this.state.shoppingCart}
-                  removeFromShoppingCart={this.removeFromShoppingCart}
-                />
-              );
+              return <ShoppingCart />;
             }}
           />
         </Switch>

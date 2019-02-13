@@ -6,6 +6,7 @@ const massive = require("massive");
 const authCtrl = require("./controllers/auth_controller");
 const prodCtrl = require("./controllers/product_controller");
 const cors = require("cors");
+//const checkForSession = require("./middleware/checkForSession");
 //const auth = require("./controllers/adminAuth");
 
 const app = express();
@@ -31,6 +32,8 @@ massive(process.env.CONNECTION_STRING)
     app.set("db", db);
   })
   .catch(err => console.log(err));
+
+//app.use(checkForSession);
 
 //user authentication
 app.post("/auth/register", authCtrl.register);

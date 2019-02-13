@@ -56,6 +56,7 @@ module.exports = {
       id: user.id,
       username: user.username
     };
+
     return res.send(req.session.user);
   },
   logout: (req, res) => {

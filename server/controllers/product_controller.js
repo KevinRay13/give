@@ -53,15 +53,30 @@ module.exports = {
   getCart: (req, res) => {
     res.json(cart);
   },
+  // addToCart: (req, res, next) => {
+  //   const { id } = req.query;
+  //   let { cart } = req.session.user;
+
+  //   const index = cart.findIndex(product => product.id == id);
+
+  //   if (index === -1) {
+  //     const selectedSwag = swag.find(product => product.id == id);
+
+  //     cart.push(selectedSwag);
+  //     req.session.user.total += selectedSwag.price;
+  //   }
+  //   res.status(200).send(req.session.user);
+  // },
   addToCart: (req, res) => {
     const dbInstance = req.app.get("db");
-
+    //console.log("req.body.id: ", req.body.id);
     dbInstance
       .get_product(req.body.id)
       .then(data => {
+        //console.log("data: ", data);
         cart.push(data);
 
-        res.json(cart);
+        res.json(data);
       })
       .catch(err => {
         res.status(500).send({ errorMessage: "re ruh roh" });
