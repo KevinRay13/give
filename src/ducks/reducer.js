@@ -4,7 +4,8 @@ import * as productsController from "./productsController";
 let initialState = {
   user: {},
   cart: [],
-  products: []
+  products: [],
+  loggedIn: false
 };
 
 const LOGIN = "LOGIN";
@@ -79,11 +80,21 @@ export default function reducer(state = initialState, action) {
     case `${REGISTER}_FULFILLED`:
       return { ...state, isLoading: false, user: action.payload.data };
     case `${LOGIN}_FULFILLED`:
-      return { ...state, isLoading: false, user: action.payload.data };
+      return {
+        ...state,
+        isLoading: false,
+        loggedIn: true,
+        user: action.payload.data
+      };
     case `${GET_USER}_FULFILLED`:
       return { ...state, isLoading: false, user: action.payload.data };
     case `${LOGOUT}_FULFILLED`:
-      return { ...state, isLoading: false, user: action.payload.data };
+      console.log("fire");
+      return {
+        ...state,
+        isLoading: false,
+        loggedIn: false
+      };
     case `${GET_CART}_FULFILLED`:
       return { ...state, isLoading: false, cart: action.payload.data };
     case `${ADD_TO_CART}_FULFILLED`:

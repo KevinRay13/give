@@ -6,14 +6,14 @@ import { getUser } from "../../ducks/reducer";
 
 class Home extends Component {
   componentDidMount() {
-    //this.props.getUser();
-    if (!this.props.user.isUser) {
+    this.props.getUser();
+    if (!this.props.user.username) {
       this.props.history.push("/");
     }
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (prevProps.user.isUser !== this.props.user.isUser) {
+    if (prevProps.user.username !== this.props.user.username) {
       this.props.getUser();
       console.log("test");
     }
@@ -21,7 +21,6 @@ class Home extends Component {
   render() {
     return (
       <div className="home-landing">
-        <div>Welcome, {this.props.user.username}</div>
         <Carousel />
       </div>
     );

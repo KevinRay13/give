@@ -1,0 +1,140 @@
+form {
+}
+h4 {
+  color: #ce0814;
+  font-size: 0.8em;
+}
+.logTitle {
+  margin-top: 2em;
+  font-size: 1.6em;
+  color: #ce0814;
+}
+.usernameInput,
+.passwordInput {
+  border: none;
+  border-bottom: 2px solid #ce0814;
+  font-size: 0.9em;
+}
+.usernameInput:focus {
+  outline: none;
+  box-shadow: none;
+  background: none;
+}
+.passwordInput:focus {
+  outline: none;
+  box-shadow: none;
+}
+.logBox {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  height: 45vh;
+  width: 30vw;
+  align-content: center;
+  align-items: center;
+  border: 2px solid #ce0814;
+  border-radius: 25px;
+  margin-top: 2em;
+}
+.centerMe {
+  margin: 0 auto;
+  margin-top: 4em;
+}
+.page {
+  height: 50vh;
+}
+input {
+  height: 2em;
+  width: 20em;
+}
+label {
+  display: flex;
+  margin: 0 auto;
+  height: 2em;
+  width: 5em;
+}
+.username,
+.password,
+.submit {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 4em;
+  align-content: center;
+  align-items: center;
+}
+.submitCont {
+  height: 2em;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 3em;
+  align-content: center;
+  align-items: center;
+}
+.submit {
+  width: 10em;
+  justify-content: space-evenly;
+  display: flex;
+
+  margin: 0 auto;
+  align-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.submit:hover {
+  color: #ce0814;
+}
+
+.submit:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.submit:hover {
+  outline: none;
+  border-color: #ce0814;
+  box-shadow: 0 0 10px #ce0814;
+  color: black;
+}
+.submit {
+  background-color: white;
+
+  box-shadow: none;
+  border-radius: 25px;
+  color: black;
+  font-size: 15px;
+}
+.btn {
+  width: 15em;
+  justify-content: space-evenly;
+  display: flex;
+  height: 3em;
+
+  margin: 0 auto;
+  font-size: 0.8em;
+  font-weight: 500;
+  border: 1px solid #ce0814;
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.btn {
+  background-image: linear-gradient(
+    to right,
+    white 0%,
+    #ce0814 51%,
+    white 100%
+  );
+}

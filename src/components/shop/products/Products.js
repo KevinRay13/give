@@ -22,41 +22,6 @@ class Products extends Component {
   componentDidMount() {
     this.props.getAllProducts();
   }
-  // componentWillMount() {
-  //   axios
-  //     .get(api + "/inventory/products")
-  //     .then(response => {
-  //       this.setState({
-  //         hats: response.data
-  //       });
-  //     })
-  //     .catch(error => alert(error));
-  //   console.log(this.state.user);
-  // }
-  // updateUser(user) {
-  //   this.setState({
-  //     user
-  //   });
-  // }
-
-  // getUser() {
-  //   axios
-  //     .get("/auth/user")
-  //     .then(giver => {
-  //       this.setState({
-  //         isAdmin: {
-  //           isAdmin: giver.is_admin.data
-  //         }
-  //       });
-  //     })
-  //     .catch(error => alert(error.response.request.response));
-  // }
-  // handleDelete = id => {
-  //   axios.delete(`http://localhost:5050/admin/inventory/${id}`).then(res => {
-  //     this.setState({ hats: res.data });
-  //     console.log(res.data);
-  //   });
-  // };
 
   // authorization(element) {
   //   if (this.state.isAdmin === true) {
@@ -65,21 +30,6 @@ class Products extends Component {
   //     );
   //   }
   //   console.log(this.state.isAdmin);
-  // }
-  // addToShoppingCart(product) {
-  //   this.setState({
-  //     shoppingCart: [...this.state.shoppingCart, product]
-  //   });
-  //   console.log(this.state.shoppingCart);
-  // }
-
-  // removeFromShoppingCart(product) {
-  //   let newShoppingCart = this.state.shoppingCart;
-  //   newShoppingCart.splice(newShoppingCart.indexOf(product), 1);
-  //   this.setState({
-  //     shoppingCart: newShoppingCart
-  //   });
-  //   console.log(this.state.shoppingCart);
   // }
 
   render() {

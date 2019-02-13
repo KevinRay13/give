@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import "./navbar.css";
-
+import { connect } from "react-redux";
+import { logout } from "../../ducks/reducer";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
+import LoginButton from "./LoginButton";
 
 class NavBar extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
-
   render() {
+    let loggedIn = this.props.loggedIn;
+
     return (
       <div>
+        <div>
+          {loggedIn ? <div> Welcome, {this.props.user.username}</div> : <div />}
+        </div>
         <div className="navbar-container">
           <div className="navbar-links-container">
             <img
@@ -21,26 +23,26 @@ class NavBar extends Component {
               className="burger"
             />
             <ul className="navbar-links">
-              <li className="link">
+              <li className="">
                 <Link to="/" className="link">
                   Home
                 </Link>
               </li>
-              <li className="link">
+              <li className="">
                 <Link to="/shop" className="link">
                   Shop
                 </Link>
               </li>
-              <li className="link">
+              {/* <li className="link">
                 <Link to="/shoppingcart" className="link">
                   Shopping Cart
                 </Link>
-              </li>
-              <li className="link">
+              </li> */}
+              {/* <li className="link">
                 <Link to="/login" className="link">
                   Login
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="logo-container">
@@ -49,13 +51,28 @@ class NavBar extends Component {
             </Link>
           </div>
           <div className="cart-container">
-            <Link to="/shoppingcart" className="linkmain">
-              <img
-                className="cart"
-                src="https://www.freeiconspng.com/uploads/red-simple-shopping-cart-icon-12.png"
-                alt="shopping cart"
-              />
-            </Link>
+            <div className="loggedCont">
+              <div to="/login" className="login" id="log">
+                <div>
+                  {loggedIn ? (
+                    <Logout />
+                  ) : (
+                    <Link to="/login" className="login">
+                      <LoginButton />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+            <div className="loggedCont">
+              <Link to="/shoppingcart" className="">
+                <img
+                  className="cart"
+                  src="https://www.freeiconspng.com/uploads/red-simple-shopping-cart-icon-12.png"
+                  alt="shopping cart"
+                />
+              </Link>
+            </div>
           </div>
         </div>
         <hr />
@@ -64,4 +81,8 @@ class NavBar extends Component {
   }
 }
 
-export default NavBar;
+const mapStateToProps = state => state;
+export default connect(
+  mapStateToProps,
+  { logout }
+)(NavBar);

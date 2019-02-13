@@ -15,6 +15,22 @@
 .link:hover {
   text-decoration: underline;
 }
+
+#log,
+.login,
+.logout {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+.login:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.logout:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
 .link:active {
   color: grey;
 }
@@ -24,7 +40,7 @@
 .navbar-links {
   display: flex;
   text-decoration: none;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding: 0;
   flex-wrap: wrap;
 
@@ -45,10 +61,90 @@
 .logo-container {
   width: 20vw;
 }
-.cart-container {
-  width: 20vw;
-}
+
 .cart {
   height: 2.5em;
   width: 2.5em;
+  display: flex;
+  margin: 0 auto;
+}
+.cart:hover {
+  height: 2.7em;
+  width: 2.7em;
+}
+/* .logout:hover {
+  color: #ce0814;
+}
+
+.logout:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.logout:hover {
+  outline: none;
+  border-color: #ce0814;
+  box-shadow: 0 0 10px #ce0814;
+  color: black;
+  width: 7em;
+  height: 1.8em;
+}
+.logout {
+  background-color: white;
+  border: 2px solid #ce0814;
+  box-shadow: none;
+  border-radius: 25px;
+  color: black;
+  font-size: 15px;
+  width: 100px;
+} */
+
+.logout {
+  width: 10em;
+  justify-content: space-evenly;
+  display: flex;
+  height: 2.5em;
+
+  /* margin: 0 auto; */
+  font-size: 0.7em;
+  font-weight: 700;
+  /* border: 1px solid #ce0814; */
+
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.9s;
+  background-size: 170% auto;
+  color: white;
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px #ce0814;
+  border-radius: 10px;
+}
+
+.logout:hover {
+  background-position: right center; /* change the direction of the change here */
+}
+
+.logout {
+  background-image: linear-gradient(
+    to right,
+    white 0%,
+    #ce0814 51%,
+    white 100%
+  );
+}
+.loggedCont {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  flex-direction: row;
+  margin: 0 auto;
+}
+.cart-container {
+  width: 20vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
 }
