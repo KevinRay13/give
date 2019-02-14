@@ -31,6 +31,7 @@
   margin-top: 1em;
   align-content: center;
   align-items: center;
+  width: 12em;
 }
 .inputs:focus {
   outline: none;
@@ -101,10 +102,15 @@
 .delete {
   margin: 1.5em;
 }
+.btnBox {
+  display: flex;
+  justify-content: space-around;
+}
 .deleteBtn {
   width: 4em;
   justify-content: space-evenly;
   display: flex;
+  flex-direction: row;
   height: 4em;
   margin-top: 20px;
   margin: 0 auto;
@@ -144,14 +150,17 @@
   text-transform: uppercase;
   transition: 0.9s;
   background-size: 210% auto;
-  color: grey;
+  color: #ce0814;
   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   box-shadow: 0 0 10px #0af3e7;
   border-radius: 10px;
+  border: 1px solid red;
 }
 
 .purchaseBtn:hover {
   background-position: right center; /* change the direction of the change here */
+
+  width: 13.1em;
 }
 
 .purchaseBtn {

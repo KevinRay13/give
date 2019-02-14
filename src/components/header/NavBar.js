@@ -11,7 +11,7 @@ class NavBar extends Component {
     let loggedIn = this.props.loggedIn;
     //console.log(this.props.user);
     return (
-      <div>
+      <div className="welcome">
         <div>
           {loggedIn ? <div> Welcome, {this.props.user.username}</div> : <div />}
         </div>

@@ -19,6 +19,7 @@ class Products extends Component {
       img_url: "",
       product_name: "",
       price: "",
+      newPrice: "",
 
       description: "",
       products: []
@@ -47,6 +48,9 @@ class Products extends Component {
   handleDescriptionInputChange(value) {
     this.setState({ description: value });
   }
+  handleNewPriceChange(value) {
+    this.setState({ newPrice: value });
+  }
   createProduct() {
     axios
       .post("http://localhost:5050/admin/inventory", {
@@ -65,6 +69,20 @@ class Products extends Component {
           product_name: "",
           price: "",
           description: ""
+        });
+      });
+  }
+  editPrice(id) {
+    axios
+      .put(`http://localhost:5050/admin/inventory/${id}`, {
+        price: this.state.newPrice
+      })
+
+      .then(() => {
+        //console.log(results.data);
+        this.props.getAllProducts(); //HACK
+        this.setState({
+          newPrice: ""
         });
       });
   }
@@ -88,6 +106,17 @@ class Products extends Component {
             </p>
             <p>
               <b>price: {element.price}</b>
+              {this.props.user.isAdmin ? (
+                <input
+                  className="inputs"
+                  type="text"
+                  placeholder="New Price"
+                  value={this.state.newPrice}
+                  onChange={e => this.handleNewPriceChange(e.target.value)}
+                />
+              ) : (
+                <p />
+              )}
             </p>
             <button
               className="purchaseBtn"
@@ -97,12 +126,23 @@ class Products extends Component {
             </button>
             <div className="delete">
               {this.props.user.isAdmin ? (
-                <button
-                  className="deleteBtn"
-                  onClick={id => this.props.deleteProduct(element.id)}
-                >
-                  delete
-                </button>
+                <div>
+                  <div className="btnBox">
+                    <button
+                      className="deleteBtn"
+                      onClick={id => this.props.deleteProduct(element.id)}
+                    >
+                      delete
+                    </button>
+
+                    <button
+                      className="deleteBtn"
+                      onClick={id => this.editPrice(element.id)}
+                    >
+                      edit
+                    </button>
+                  </div>
+                </div>
               ) : (
                 <p />
               )}
