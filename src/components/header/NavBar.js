@@ -9,7 +9,7 @@ import LoginButton from "./LoginButton";
 class NavBar extends Component {
   render() {
     let loggedIn = this.props.loggedIn;
-
+    //console.log(this.props.user);
     return (
       <div>
         <div>

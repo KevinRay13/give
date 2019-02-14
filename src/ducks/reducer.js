@@ -16,6 +16,8 @@ const GET_CART = "GET_CART";
 const ADD_TO_CART = "ADD_TO_CART";
 const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
+const DELETE = "DELETE";
+const CREATE_PRODUCT = "CREATE_PRODUCT";
 
 export const register = (username, password) => {
   return {
@@ -58,7 +60,7 @@ export const addToCart = id => {
 };
 
 export const removeFromCart = id => {
-  console.log("triggered");
+  //console.log("triggered");
   return {
     type: REMOVE_FROM_CART,
     payload: id
@@ -68,6 +70,19 @@ export const getAllProducts = () => {
   return {
     type: GET_ALL_PRODUCTS,
     payload: productsController.getAllProducts()
+  };
+};
+export const deleteProduct = id => {
+  //console.log("fire1", id);
+  return {
+    type: DELETE,
+    payload: axios.delete(`/admin/inventory/${id}`)
+  };
+};
+export const create = () => {
+  return {
+    type: CREATE_PRODUCT,
+    payload: axios.post("/admin/inventory")
   };
 };
 
@@ -89,7 +104,7 @@ export default function reducer(state = initialState, action) {
     case `${GET_USER}_FULFILLED`:
       return { ...state, isLoading: false, user: action.payload.data };
     case `${LOGOUT}_FULFILLED`:
-      console.log("fire");
+      //console.log("fire");
       return {
         ...state,
         isLoading: false,
@@ -103,8 +118,6 @@ export default function reducer(state = initialState, action) {
         cart: [...state.cart, action.payload.data]
       };
     case REMOVE_FROM_CART:
-      console.log("cart:", state.cart);
-      console.log("trigger");
       let newArray = state.cart.slice();
       //FIXMENOTE; //deleting first item in array
 
@@ -114,6 +127,20 @@ export default function reducer(state = initialState, action) {
     case `${GET_ALL_PRODUCTS}_PENDING`:
       return Object.assign({}, state, { loading: true });
     case `${GET_ALL_PRODUCTS}_FULFILLED`:
+      //console.log("fire3", action.payload);
+      return Object.assign({}, state, {
+        loading: false,
+        products: action.payload
+      });
+    case `${DELETE}_FULFILLED`:
+      //console.log("fire2", action.payload.data);
+      return Object.assign({}, state, {
+        loading: false,
+        products: action.payload.data
+      });
+
+    case `${CREATE_PRODUCT}_FULFILLED`:
+      //console.log("fire2", action.payload.data);
       return Object.assign({}, state, {
         loading: false,
         products: action.payload

@@ -24,8 +24,6 @@ class Cart extends Component {
     //console.log(this.props.cart[0].img_url);
     let shoppingCartDisplay = this.props.cart ? (
       this.props.cart.map((element, index) => {
-        console.log("index", index);
-        console.log("props", this.props);
         return (
           <div className="shopping-cart-container" key={index}>
             <img src={element[0].img_url} alt="" />
@@ -63,7 +61,6 @@ class Cart extends Component {
 }
 
 function mapStateToProps(state) {
-  console.log("kevin", state);
   return {
     cart: state.cart
   };

@@ -9,6 +9,7 @@ module.exports = {
     dbInstance
       .get_products()
       .then(products => res.status(200).send(products))
+      //.then(products => console.log(products))
       .catch(err => {
         res.status(500).send({ errorMessage: "ruh roh" });
         console.log(err);
@@ -32,7 +33,8 @@ module.exports = {
 
     dbInstance
       .delete_product([params.id])
-      .then(() => res.sendStatus(200))
+      .then(data => res.json(data))
+
       .catch(err => {
         res.status(500).send({ errorMessage: "raggie" });
         console.log(err);
@@ -44,7 +46,7 @@ module.exports = {
 
     dbInstance
       .create_product([product_name, description, price, img_url])
-      .then(() => res.sendStatus(200))
+      .then(data => res.json(data))
       .catch(err => {
         res.status(500).send({ errorMessage: "re ruh roh" });
         console.log(err);
