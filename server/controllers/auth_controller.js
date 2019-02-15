@@ -1,4 +1,15 @@
 const bcrypt = require("bcryptjs");
+const nodemailer = require("nodemailer");
+require("dotenv").config();
+
+let transporter = nodemailer.createTransport({
+  service: "gmail",
+
+  auth: {
+    user: process.env.EMAIL_USERNAME, // generated ethereal user
+    pass: process.env.EMAIL_PASSWORD // generated ethereal password
+  }
+});
 
 module.exports = {
   register: async (req, res) => {
@@ -19,6 +30,19 @@ module.exports = {
         username: user.username,
         id: user.id
       };
+      let mailOptions = {
+        from: '"Kevin Edmondson"', // sender address
+        to: req.body.username, // list of receivers
+        subject: "Hello ✔", // Subject line
+        text: "Welcome to the (give) community! We are glad to have you!" // plain text body
+      };
+      transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+        }
+      });
       return res.status(200).send(req.session.user);
     } catch (error) {
       console.log(error);

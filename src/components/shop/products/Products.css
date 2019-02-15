@@ -134,6 +134,10 @@
 .deleteBtn {
   background-image: linear-gradient(to right, red 0%, #ce0814 51%, red 100%);
 }
+.purchaseBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
 
 .purchaseBtn {
   width: 13em;
@@ -152,7 +156,7 @@
   background-size: 210% auto;
   color: #ce0814;
   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  box-shadow: 0 0 10px #0af3e7;
+  /* box-shadow: 0 0 10px #0af3e7; */
   border-radius: 10px;
   border: 1px solid red;
 }

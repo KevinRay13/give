@@ -24,6 +24,7 @@ h4 {
   outline: none;
   box-shadow: none;
 }
+
 .logBox {
   display: flex;
   flex-direction: column;
@@ -137,4 +138,10 @@ label {
     #ce0814 51%,
     white 100%
   );
+}
+@media (max-width: 1000px) {
+  .logBox {
+    border: none;
+    width: auto;
+  }
 }

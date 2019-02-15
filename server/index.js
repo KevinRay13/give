@@ -6,8 +6,10 @@ const massive = require("massive");
 const authCtrl = require("./controllers/auth_controller");
 const prodCtrl = require("./controllers/product_controller");
 const cors = require("cors");
+//const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 //const checkForSession = require("./middleware/checkForSession");
 //const auth = require("./controllers/adminAuth");
+const pay_controller = require("./controllers/payment_controller");
 
 const app = express();
 
@@ -33,6 +35,14 @@ massive(process.env.CONNECTION_STRING)
   })
   .catch(err => console.log(err));
 
+// const configureRoutes = require("./routes");
+// configureRoutes(app);
+// const paymentApi = require("./payment");
+// const configureRoutes = app => {
+//paymentApi(app);
+// };
+// module.exports = configureRoutes;
+
 //app.use(checkForSession);
 
 //user authentication
@@ -50,5 +60,34 @@ app.put("/admin/inventory/:id", prodCtrl.update);
 app.get("/inventory/products", prodCtrl.getAllProducts);
 app.post("/inventory/addToCart", prodCtrl.addToCart); //add to cart
 app.get("/inventory/cart", prodCtrl.getCart); //get current cart
+//app.post("/charge", prodCtrl.charge);
+
+//payment
+app.post("/payment", pay_controller.takePayment);
+
+// const stripeChargeCallback = res => (stripeErr, stripeRes) => {
+//   if (stripeErr) {
+//     res.status(500).send({ error: stripeErr });
+//   } else {
+//     res.status(200).send({ success: stripeRes });
+//   }
+// };
+// const paymentApi = app => {
+//   app.get("/", (req, res) => {
+//     res.send({
+//       message: "Hello Stripe checkout server!",
+//       timestamp: new Date().toISOString()
+//     });
+//   });
+//   app.post("/payment", (req, res) => {
+//     const body = {
+//       source: req.body.token.id,
+//       amount: req.body.amount,
+//       currency: "usd"
+//     };
+//     stripe.charges.create(body, stripeChargeCallback(res));
+//   });
+//   return app;
+// };
 
 app.listen(5050, () => console.log(`listening on port ${5050}`));

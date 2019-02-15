@@ -104,7 +104,7 @@ class Products extends Component {
               description: <br />
               {element.description}
             </p>
-            <p>
+            <div>
               <b>price: {element.price}</b>
               {this.props.user.isAdmin ? (
                 <input
@@ -117,7 +117,7 @@ class Products extends Component {
               ) : (
                 <p />
               )}
-            </p>
+            </div>
             <button
               className="purchaseBtn"
               onClick={id => this.props.addToCart(element.id)}

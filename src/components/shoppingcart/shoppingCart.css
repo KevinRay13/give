@@ -1,0 +1,12 @@
+.go-buy-something {
+  margin: 0 auto;
+  height: 80vh;
+
+  align-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+.checkoutCont {
+  margin: 3em;
+}
