@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 import "./carousel.scss";
-
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 const api = "http://localhost:5050";
@@ -66,7 +66,9 @@ export default class SimpleSlider extends React.Component {
       this.state.hats.map((element, index) => {
         return (
           <div key={index} className="centerme">
-            <img className="caps" src={element.img_url} alt="img here" />
+            <Link to="/shop" className="">
+              <img className="caps" src={element.img_url} alt="img here" />
+            </Link>
             <h3> {element.product_name}</h3>
             <h3>description: {element.description}</h3>
             <h3>price: {element.price}</h3>

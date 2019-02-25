@@ -156,6 +156,17 @@ class Products extends Component {
     return (
       <div>
         <div />
+        <div className="hatbanner">
+          <img
+            src="http://www.imperial.ac.uk/ImageCropToolT4/imageTool/uploaded-images/shutterstock_64199689--tojpeg_1409138481893_x1.jpg"
+            alt=""
+            className="hatbanner"
+          />
+          <div className="collection">
+            <h2 className="hatCol">Hat Collection</h2>
+          </div>
+        </div>
+
         <div className="popitems">{invlist}</div>
         <div>
           {this.props.user.isAdmin ? (
