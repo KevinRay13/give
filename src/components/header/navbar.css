@@ -7,6 +7,12 @@
   align-items: center;
   margin: 0 auto;
   text-decoration: none;
+  position: fixed;
+  top: 0;
+  background-color: white;
+  z-index: 3000;
+  margin-top: 0;
+  border: 1px solid #4f5858;
 }
 .welcome {
   /* background-color: rgba(0, 255, 255, 0.178); */
@@ -14,6 +20,7 @@
 .linkmain {
   color: #ce0814;
   text-decoration: none;
+  font-size: 1.4em;
 }
 .link:hover {
   text-decoration: underline;
@@ -103,10 +110,10 @@
 } */
 
 .logout {
-  width: 10em;
+  width: 8em;
   justify-content: space-evenly;
   display: flex;
-  height: 2.5em;
+  height: 2.2em;
 
   /* margin: 0 auto; */
   font-size: 0.7em;
@@ -145,7 +152,7 @@
   margin: 0 auto;
 }
 .cart-container {
-  width: 20vw;
+  width: 17vw;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

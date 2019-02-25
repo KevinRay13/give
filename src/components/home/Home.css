@@ -1,0 +1,40 @@
+.aboutcont {
+  height: 100vh;
+  display: flex;
+  color: #4f5858;
+  flex-wrap: wrap;
+}
+.manyhats {
+  height: 35em;
+  width: 35em;
+  margin: 5em;
+  border-radius: 10px;
+}
+.givemessage {
+  margin: 0 auto;
+  align-items: center;
+  align-content: center;
+  display: flex;
+}
+.message {
+  margin: 0 auto;
+  width: 35vw;
+}
+.messageimg {
+  height: 10em;
+  width: 10em;
+}
+.banner {
+  width: 100vw;
+  height: 70vh;
+}
+.home-landing {
+}
+@media (max-width: 720px) {
+  .manyhats {
+    display: none;
+  }
+  .banner {
+    display: none;
+  }
+}
