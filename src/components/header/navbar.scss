@@ -1,7 +1,10 @@
-.navbar-container {
+@mixin flex {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+}
+.navbar-container {
+  @include flex;
+  justify-content: space-evenly;
   height: 10vh;
   width: 100vw;
   align-items: center;
@@ -9,18 +12,31 @@
   text-decoration: none;
   position: fixed;
   top: 0;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.863);
   z-index: 3000;
   margin-top: 0;
-  border: 1px solid #4f5858;
+  /* border: 1px solid #4f5858; */
+  padding-bottom: -18px;
 }
 .welcome {
-  /* background-color: rgba(0, 255, 255, 0.178); */
+  background-color: rgba(167, 202, 202, 0.24);
+  color: rgba(255, 255, 255, 0.863);
+
+  justify-content: center;
+
+  @include flex;
+
+  width: 100%;
+  margin-bottom: 18px;
+  letter-spacing: 8px;
 }
+
 .linkmain {
   color: #ce0814;
   text-decoration: none;
   font-size: 1.4em;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
 }
 .link:hover {
   text-decoration: underline;
@@ -47,14 +63,18 @@
 .link:visited {
   color: #ce0814;
 }
+.navbar-links-container {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
 .navbar-links {
-  display: flex;
+  @include flex;
   text-decoration: none;
   justify-content: space-evenly;
   padding: 0;
-  flex-wrap: wrap;
 
-  width: 20vw;
+  align-items: center;
+  width: 30vw;
   list-style-type: none;
   font-size: 1.2em;
 }
@@ -69,13 +89,13 @@
   display: none;
 }
 .logo-container {
-  width: 20vw;
+  width: 30vw;
 }
 
 .cart {
   height: 2.5em;
   width: 2.5em;
-  display: flex;
+  @include flex;
   margin: 0 auto;
 }
 .cart:hover {
@@ -112,7 +132,7 @@
 .logout {
   width: 8em;
   justify-content: space-evenly;
-  display: flex;
+  @include flex;
   height: 2.2em;
 
   /* margin: 0 auto; */
@@ -143,7 +163,7 @@
   );
 }
 .loggedCont {
-  display: flex;
+  @include flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
@@ -152,9 +172,31 @@
   margin: 0 auto;
 }
 .cart-container {
-  width: 17vw;
-  display: flex;
+  width: 30vw;
+  @include flex;
   justify-content: space-evenly;
   align-items: center;
   align-content: center;
+}
+.linear-wipe {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: 1800;
+  font-weight: 100;
+  letter-spacing: 2px;
+  text-align: center;
+  color: black;
+  background-image: -webkit-linear-gradient(92deg, #ce0814, white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+  from {
+    -webkit-filter: hue-rotate(-320deg);
+  }
+  to {
+    -webkit-filter: hue-rotate(-370deg);
+  }
 }

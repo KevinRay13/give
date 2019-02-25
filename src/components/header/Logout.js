@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { logout } from "../../ducks/reducer";
 import { connect } from "react-redux";
-import "./navbar.css";
+import "./navbar.scss";
 
 class Logout extends Component {
   render() {

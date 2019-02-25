@@ -1,10 +1,20 @@
+@mixin flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .aboutcont {
   height: 100vh;
   display: flex;
   color: #4f5858;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
-.manyhats {
+.chickContainer {
+  @include flex;
+  justify-content: space-around;
+}
+.chick {
   height: 35em;
   width: 35em;
   margin: 5em;
@@ -15,6 +25,7 @@
   align-items: center;
   align-content: center;
   display: flex;
+  height: 750px;
 }
 .message {
   margin: 0 auto;
@@ -27,11 +38,14 @@
 .banner {
   width: 100vw;
   height: 70vh;
+  top: 0;
+  position: static;
+  margin-top: -10px;
 }
 .home-landing {
 }
 @media (max-width: 720px) {
-  .manyhats {
+  .chick {
     display: none;
   }
   .banner {

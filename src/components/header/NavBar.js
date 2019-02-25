@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./navbar.css";
+import "./navbar.scss";
 import { connect } from "react-redux";
 import { logout } from "../../ducks/reducer";
 import { Link } from "react-router-dom";
@@ -9,12 +9,10 @@ import LoginButton from "./LoginButton";
 class NavBar extends Component {
   render() {
     let loggedIn = this.props.loggedIn;
+    let isAdmin = this.props.user.isAdmin;
     //console.log(this.props.user);
     return (
-      <div className="welcome">
-        <div>
-          {loggedIn ? <div> Welcome, {this.props.user.username}</div> : <div />}
-        </div>
+      <div>
         <div className="navbar-container">
           <div className="navbar-links-container">
             <img
@@ -33,11 +31,15 @@ class NavBar extends Component {
                   Shop
                 </Link>
               </li>
-              {/* <li className="link">
-                <Link to="/shoppingcart" className="link">
-                  Shopping Cart
-                </Link>
-              </li> */}
+              {isAdmin ? (
+                <li className="link">
+                  <Link to="/adminDash" className="link">
+                    Admin Dashboard
+                  </Link>
+                </li>
+              ) : (
+                <p />
+              )}
               {/* <li className="link">
                 <Link to="/login" className="link">
                   Login
@@ -73,6 +75,16 @@ class NavBar extends Component {
                 />
               </Link>
             </div>
+          </div>
+          <div className="welcome">
+            {loggedIn ? (
+              <div className="linear-wipe">
+                {" "}
+                <b>Welcome, {this.props.user.username}</b>
+              </div>
+            ) : (
+              <div />
+            )}
           </div>
         </div>
         <hr />

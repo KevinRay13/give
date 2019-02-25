@@ -7,6 +7,7 @@ import ShoppingCart from "./components/shoppingcart/ShoppingCart";
 import { Route, Switch } from "react-router-dom";
 import Home from "./components/home/Home";
 import LogReg from "./components/login/LogReg";
+import AdminDashboard from "./components/login/AdminDashboard";
 
 class App extends Component {
   render() {
@@ -26,6 +27,12 @@ class App extends Component {
             path="/shoppingcart"
             render={() => {
               return <ShoppingCart />;
+            }}
+          />
+          <Route
+            path="/adminDash"
+            render={() => {
+              return <AdminDashboard />;
             }}
           />
         </Switch>

@@ -32,7 +32,7 @@ class Auth extends Component {
     this.setState({ username: "", password: "" });
   };
   render() {
-    console.log(this.props.user.username);
+    //console.log(this.props.user.username);
     if (this.props.user.username) {
       return <Redirect push to="/" />;
     }

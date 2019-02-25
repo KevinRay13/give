@@ -99,5 +99,19 @@ module.exports = {
     } catch (err) {
       res.status(500).end();
     }
+  },
+  getOrders: (req, res, next) => {
+    // const allProds = await req.app.get("db").get_products();
+    // return res.status(200).send(allProds);
+    const dbInstance = req.app.get("db");
+
+    dbInstance
+      .get_orders()
+      .then(orders => res.json(orders))
+      //.then(products => console.log(products))
+      .catch(err => {
+        res.status(500).send({ errorMessage: "ruh roh" });
+        console.log(err);
+      });
   }
 };

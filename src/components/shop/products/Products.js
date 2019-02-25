@@ -155,7 +155,7 @@ class Products extends Component {
     );
     return (
       <div>
-        <div>Merch</div>
+        <div />
         <div className="popitems">{invlist}</div>
         <div>
           {this.props.user.isAdmin ? (

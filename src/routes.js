@@ -5,6 +5,7 @@ import Shop from "./components/shop/Shop";
 import Home from "./components/home/Home";
 import Cart from "./components/shoppingcart/ShoppingCart";
 import LogReg from "./components/login/LogReg";
+import AdminDashboard from "./components/login/AdminDashboard";
 
 export default (
   <Switch>
@@ -12,5 +13,6 @@ export default (
     <Route component={Cart} exact path="/shoppingcart" />
     <Route component={LogReg} exact path="/login" />
     <Route component={Shop} path="/shop" />
+    <Route component={AdminDashboard} path="/adminDash" />
   </Switch>
 );

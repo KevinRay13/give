@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { login } from "../../ducks/reducer";
 import { connect } from "react-redux";
-import "./navbar.css";
+import "./navbar.scss";
 
 class LoginButton extends Component {
   render() {

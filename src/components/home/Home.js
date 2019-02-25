@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Home.css";
+import "./Home.scss";
 import Carousel from "./Carousel";
 import { connect } from "react-redux";
 import { getUser } from "../../ducks/reducer";
@@ -30,11 +30,11 @@ class Home extends Component {
         </div>
         <Carousel />
         <div className="aboutcont">
-          <div>
+          <div className="chickContainer">
             <img
               src="https://missmuslim.nyc/store/wp-content/uploads/2018/12/hat-2.jpg"
               alt="hats"
-              className="manyhats"
+              className="chick"
             />
           </div>
           <div className="givemessage">

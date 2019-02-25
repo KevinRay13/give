@@ -55,6 +55,7 @@ app.get("/auth/user", authCtrl.getUser);
 app.delete("/admin/inventory/:id", prodCtrl.deleteProduct);
 app.post("/admin/inventory", prodCtrl.createProduct);
 app.put("/admin/inventory/:id", prodCtrl.update);
+app.get("/admin/orders", prodCtrl.getOrders);
 
 //inventory
 app.get("/inventory/products", prodCtrl.getAllProducts);
