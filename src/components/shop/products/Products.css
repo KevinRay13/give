@@ -73,6 +73,10 @@ img {
   outline: none;
   box-shadow: none;
 }
+.addToInventory:focus {
+  outline: none;
+  box-shadow: none;
+}
 .addToInventory {
   width: 13em;
   justify-content: space-evenly;

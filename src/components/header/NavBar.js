@@ -47,6 +47,13 @@ class NavBar extends Component {
               </li> */}
             </ul>
           </div>
+          <div className="heart">
+            <img
+              src="http://logok.org/wp-content/uploads/2015/08/CVS-Health-logo.png"
+              alt=""
+              className="heartImg"
+            />
+          </div>
           <div className="logo-container">
             <Link to="/" className="linkmain">
               <h2 className="linkmain">(give)</h2>

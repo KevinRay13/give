@@ -34,9 +34,14 @@ module.exports = {
         from: '"Kevin Edmondson"', // sender address
         to: req.body.username, // list of receivers
         subject: "Hello ✔", // Subject line
-        text: `Welcome to the (give) community ${
-          req.body.username
-        }, We are glad to have you!` // plain text body
+        html: `<h1>We're Stoked You Joined!</h1>
+          <div>
+            Welcome to the <b style="color:#ce0814">(give)</b>
+            community ${req.body.username}, We are glad to have you! The
+            community here at <b style="color:#ce0814">(give)</b> is focused on
+            giving back. Half of everything goes to those in need.
+          </div>`
+        // plain text body
       };
       transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
