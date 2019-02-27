@@ -31,7 +31,7 @@ class Cart extends Component {
             <img className="caps" src={element[0].img_url} alt="" />
             <div className="shopping-cart-info">
               <h2>{element[0].product_name}</h2>
-              <h2>{element[0].description}</h2>
+              {/* <h2>{element[0].description}</h2> */}
               <h2>${element[0].price}</h2>
               <div className="shopping-cart-button-container">
                 <button

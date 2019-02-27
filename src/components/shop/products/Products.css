@@ -177,9 +177,23 @@ img {
   outline: none;
   box-shadow: none;
 }
-
+.prodName {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.8em;
+  letter-spacing: 5px;
+  margin-bottom: -1em;
+}
+.price {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2em;
+}
+.desc {
+  /* font-family: "Nunito", sans-serif;
+  font-size: 1.2em; */
+}
 .purchaseBtn {
   width: 13em;
+  font-family: "Nunito", sans-serif;
   justify-content: space-evenly;
   display: flex;
   height: 2em;

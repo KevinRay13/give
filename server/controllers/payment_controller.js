@@ -25,6 +25,7 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 //   return app;
 // };
 // module.exports = paymentApi;
+//const total = 10.00
 module.exports = {
   takePayment: (req, res) => {
     const token = req.body.token;

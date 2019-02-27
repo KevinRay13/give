@@ -97,15 +97,15 @@ class Products extends Component {
           <div key={index} className="products">
             <img className="caps" src={element.img_url} alt="img here" />
             <br />
-            <p> {element.product_name}</p>
+            <p className="prodName"> {element.product_name}</p>
             <br />
 
-            <p>
+            {/* <p className="desc">
               description: <br />
               {element.description}
-            </p>
+            </p> */}
             <div>
-              <b>price: {element.price}</b>
+              <p className="price"> ${element.price}</p>
               {this.props.user.isAdmin ? (
                 <input
                   className="inputs"

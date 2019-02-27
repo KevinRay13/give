@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 class StripeBtn extends Component {
   onToken = token => {
     const body = {
-      amount: this.props.total,
+      amount: `${this.props.total * 100}`,
       token: token
     };
     console.log("this is the token", body);
