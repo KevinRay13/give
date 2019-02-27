@@ -4,8 +4,9 @@
 }
 .navbar-container {
   @include flex;
-  justify-content: space-evenly;
-  height: 10vh;
+  font-family: "Nunito", sans-serif;
+  justify-content: space-between;
+  height: 9vh;
   width: 100vw;
   align-items: center;
   margin: 0 auto;
@@ -16,19 +17,24 @@
   z-index: 3000;
   margin-top: 0;
   /* border: 1px solid #4f5858; */
-  padding-bottom: -18px;
+  // padding-bottom: -18px;
 }
 .welcome {
-  background-color: rgba(167, 202, 202, 0.24);
-  color: rgba(255, 255, 255, 0.863);
+  // background-color: rgba(255, 255, 255, 0.24);
+  // color: rgba(255, 255, 255, 0.863);
+  // font-family: "Nunito", sans-serif;
+  // justify-content: center;
 
-  justify-content: center;
+  // @include flex;
 
-  @include flex;
-
-  width: 100%;
-  margin-bottom: 18px;
-  letter-spacing: 8px;
+  // width: 10em;
+  // margin-bottom: 18px;
+  // letter-spacing: 8px;
+}
+.par {
+  color: #c90b14;
+  display: none;
+  font-size: 3em;
 }
 
 .linkmain {
@@ -177,13 +183,13 @@
 .cart-container {
   width: 30vw;
   @include flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   align-content: center;
 }
 .heartImg {
-  height: 3em;
-  width: 4em;
+  height: 2.5em;
+  width: 3em;
 }
 .heart {
   margin: 0;
@@ -191,7 +197,7 @@
   flex-wrap: wrap;
   font-size: 2em;
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .linkmain,
   .logo-container {
     display: none;
@@ -200,27 +206,48 @@
     display: flex;
     animation: HEARTBEAT 2.5s 3;
   }
+  .par {
+    display: flex;
+  }
+}
+.bak {
+  //background-color: rgba(255, 255, 255, 0.336);
+  //position: static;
+  border: 1px transparent;
+  height: 2em;
+  width: 15em;
 }
 .linear-wipe {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: "Nunito", sans-serif;
+  position: fixed;
+  height: 2em;
+  z-index: 3000;
+  width: 12em;
+  right: 0;
+  top: 0;
+  //border: 1px transparent;
+  //border-color: -webkit-linear-gradient(92deg, #ff0404, rgb(255, 238, 0));
+  margin-top: -1em;
+  padding-right: 4em;
   font-size: 1em;
   font-weight: 1800;
   font-weight: 100;
-  letter-spacing: 2px;
+  letter-spacing: 7px;
   text-align: center;
   color: black;
-  background-image: -webkit-linear-gradient(92deg, #ce0814, white);
-  -webkit-background-clip: text;
+  background-image: -webkit-linear-gradient(92deg, #07fcfc, rgb(255, 0, 0));
+  -webkit-background-clip: text, border-box;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: hue 10s infinite linear;
+
+  -webkit-animation: hue 4s infinite linear;
 }
 
 @-webkit-keyframes hue {
   from {
-    -webkit-filter: hue-rotate(-320deg);
+    -webkit-filter: hue-rotate(-0deg);
   }
   to {
-    -webkit-filter: hue-rotate(-370deg);
+    -webkit-filter: hue-rotate(-360deg);
   }
 }
 @keyframes HEARTBEAT {
@@ -243,3 +270,9 @@
     transform: scale(1);
   }
 }
+// @media (max-width: 700px) {
+//   .chick {
+//     display: none;
+//   }
+
+// }

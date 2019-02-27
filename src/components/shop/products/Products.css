@@ -4,6 +4,7 @@
   flex-direction: column;
   margin: 2em;
   margin-top: 5em;
+  font-family: "Nunito", sans-serif;
 }
 .popitems {
   display: flex;
@@ -15,6 +16,7 @@
   width: 70vw;
   margin: 0 auto;
   justify-content: space-evenly;
+  font-family: "Nunito", sans-serif;
 }
 /* .collection {
   background-color: #eaeff0e7;
@@ -24,15 +26,17 @@
   z-index: 3000;
 } */
 .hatCol {
-  margin: 0;
+  /* margin: 0; */
   background-color: #d2e1e46c;
   top: 0;
   margin: 0 auto;
-  padding: 0.85em;
+  padding: 0.75em;
+  font-weight: 1500;
   letter-spacing: 0.5em;
   color: #4f5858;
   font-size: 1.7em;
   position: relative;
+  font-family: "Nunito", sans-serif;
 }
 img {
   z-index: -1000;

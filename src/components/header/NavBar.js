@@ -47,6 +47,7 @@ class NavBar extends Component {
               </li> */}
             </ul>
           </div>
+          <p className="par">(</p>
           <div className="heart">
             <img
               src="http://logok.org/wp-content/uploads/2015/08/CVS-Health-logo.png"
@@ -54,6 +55,8 @@ class NavBar extends Component {
               className="heartImg"
             />
           </div>
+
+          <p className="par">)</p>
           <div className="logo-container">
             <Link to="/" className="linkmain">
               <h2 className="linkmain">(give)</h2>
@@ -86,8 +89,7 @@ class NavBar extends Component {
           <div className="welcome">
             {loggedIn ? (
               <div className="linear-wipe">
-                {" "}
-                <b>Welcome, {this.props.user.username}</b>
+                <p className="bak">Welcome {this.props.user.username}</p>
               </div>
             ) : (
               <div />

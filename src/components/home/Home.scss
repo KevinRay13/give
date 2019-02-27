@@ -9,6 +9,10 @@
   color: #4f5858;
   flex-wrap: wrap;
   justify-content: space-around;
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2em;
+  align-items: center;
+  align-content: center;
 }
 .chickContainer {
   @include flex;
@@ -30,25 +34,38 @@
 .message {
   margin: 0 auto;
   width: 35vw;
+  height: 50vh;
 }
 .messageimg {
   height: 10em;
   width: 10em;
 }
+.cara {
+  padding-top: 40em;
+}
 .banner {
-  width: 100vw;
-  height: 70vh;
+  width: 100%;
+  height: 650px;
+  min-width: 1400px; //the "container" width
+  overflow: hidden;
+  right: 0;
+  background-position: right 0;
   top: 0;
-  position: static;
+  position: absolute;
   margin-top: -10px;
 }
 .home-landing {
 }
-@media (max-width: 720px) {
-  .chick {
-    display: none;
+@media (max-width: 900px) {
+  .cara {
+    padding-top: 10em;
   }
   .banner {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .chick {
     display: none;
   }
 }

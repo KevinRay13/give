@@ -29,16 +29,14 @@ class AdminDashboard extends Component {
       this.state.orders.map((element, index) => {
         //console.log(element.id);
         return (
-          <div key={index} className="orders" className="gradient-border">
+          <div key={index} className="gradient-border">
+            <p className="info">{element.username}</p>
+            <br />
             <p className="info"> Date Ordered: {element.date}</p>
             <br />
             <p className="info"> Product ID:{element.products_ordered}</p>
             <br />
-
-            <p className="info">
-              user: <br />
-              {element.username}
-            </p>
+            <p className="info"> Total:{element.total}</p>
           </div>
         );
       })

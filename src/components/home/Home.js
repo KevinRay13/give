@@ -28,7 +28,9 @@ class Home extends Component {
             className="banner"
           />
         </div>
-        <Carousel />
+        <div className="cara">
+          <Carousel />
+        </div>
         <div className="aboutcont">
           <div className="chickContainer">
             <img
