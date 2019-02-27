@@ -21,13 +21,13 @@ class Home extends Component {
   render() {
     return (
       <div className="home-landing">
-        <div className="banner">
-          <img
-            src="https://cdn.shopify.com/s/files/1/1863/0841/files/rsz__mg_1198-compressor_1024x1024.jpg?v=1501186091"
-            alt=""
-            className="banner"
-          />
-        </div>
+        {/* <div className="banner"> */}
+        <img
+          src="https://cdn.shopify.com/s/files/1/1863/0841/files/rsz__mg_1198-compressor_1024x1024.jpg?v=1501186091"
+          alt=""
+          className="banner"
+        />
+        {/* </div> */}
         <div className="cara">
           <Carousel />
         </div>

@@ -22,7 +22,10 @@
   height: 35em;
   width: 35em;
   margin: 5em;
+  margin-top: 10em;
   border-radius: 10px;
+  // display: flex;
+  // flex-wrap: wrap;
 }
 .givemessage {
   margin: 0 auto;
@@ -41,11 +44,13 @@
   width: 10em;
 }
 .cara {
+  //display: flex;
   padding-top: 40em;
+  //margin-bottom: 15em;
 }
 .banner {
   width: 100%;
-  height: 650px;
+  height: 40em;
   min-width: 1400px; //the "container" width
   overflow: hidden;
   right: 0;
@@ -66,6 +71,17 @@
 }
 @media (max-width: 700px) {
   .chick {
-    display: none;
+    height: 20em;
+    width: 20em;
+  }
+  .chickContainer {
+    // height: 60vh;
+    margin-top: -10em;
+    margin-bottom: -10em;
+  }
+}
+@media (max-width: 1330px) {
+  .cara {
+    margin-bottom: 15em;
   }
 }
