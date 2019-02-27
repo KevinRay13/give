@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import StripeCheckout from "react-stripe-checkout";
 import axios from "axios";
+import { getCart } from "../../ducks/reducer";
+import { connect } from "react-redux";
 
 class StripeBtn extends Component {
   onToken = token => {
     const body = {
-      amount: 999,
+      amount: this.props.total,
       token: token
     };
     console.log("this is the token", body);
@@ -29,7 +31,7 @@ class StripeBtn extends Component {
           name="(give)" //Modal Header
           description="Thanks for giving back!"
           panelLabel="Complete Purchase" //Submit button in modal
-          amount={999} //Amount in cents $9.99
+          amount={this.props.total * 100} //Amount in cents $9.99
           token={this.onToken}
           stripeKey="pk_test_N7WAnnmGoPE9GJmC8XJDuSDN"
           image="" //Pop-in header image
@@ -39,4 +41,15 @@ class StripeBtn extends Component {
     );
   }
 }
-export default StripeBtn;
+
+function mapStateToProps(state) {
+  return {
+    cart: state.cart,
+    total: state.total
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { getCart }
+)(StripeBtn);
