@@ -31,7 +31,7 @@ class StripeBtn extends Component {
           name="(give)" //Modal Header
           description="Thanks for giving back!"
           panelLabel="Complete Purchase" //Submit button in modal
-          amount={this.props.total * 100} //Amount in cents $9.99
+          amount={this.props.total * 100} //Amount in cents $9.99 done NOTE
           token={this.onToken}
           stripeKey="pk_test_N7WAnnmGoPE9GJmC8XJDuSDN"
           image="" //Pop-in header image
