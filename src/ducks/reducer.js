@@ -5,7 +5,8 @@ let initialState = {
   user: {},
   cart: [],
   products: [],
-  loggedIn: false
+  loggedIn: false,
+  total: 0
 };
 
 const LOGIN = "LOGIN";
@@ -18,6 +19,7 @@ const REMOVE_FROM_CART = "REMOVE_FROM_CART";
 const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
 const DELETE = "DELETE";
 const CREATE_PRODUCT = "CREATE_PRODUCT";
+// const CART_TOTAL = "CART_TOTAL";
 
 export const register = (username, password) => {
   return {
@@ -85,6 +87,13 @@ export const create = () => {
     payload: axios.post("/admin/inventory")
   };
 };
+// export const cartTotal = () => {
+//   //console.log("triggered");
+//   return {
+//     type: CART_TOTAL,
+//     payload: total
+//   };
+// };
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -113,9 +122,15 @@ export default function reducer(state = initialState, action) {
     case `${GET_CART}_FULFILLED`:
       return { ...state, isLoading: false, cart: action.payload.data };
     case `${ADD_TO_CART}_FULFILLED`:
+      console.log("fire1", action.payload.data[0].price);
+      // const price = action.payload.data[0].price
+      // const newTotal = state.total.reduce((total, price) => total + price, 0 )
+      //const sum = state.total.reduce((partial_sum, a) => partial_sum + a);
+      //console.log(sum);
       return {
         ...state,
-        cart: [...state.cart, action.payload.data]
+        cart: [...state.cart, action.payload.data],
+        total: (state.total += +action.payload.data[0].price)
       };
     case REMOVE_FROM_CART:
       let newArray = state.cart.slice();
@@ -145,6 +160,9 @@ export default function reducer(state = initialState, action) {
         loading: false,
         products: action.payload
       });
+    // case CART_TOTAL:
+
+    // return Object.assign({}, state, { total: newArray });
 
     default:
       return state;

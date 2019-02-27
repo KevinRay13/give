@@ -89,7 +89,7 @@ class Products extends Component {
 
   render() {
     //const { user } = this.state;
-    //console.log("this.props", this.props.products);
+    console.log("this.props.total", this.props.total);
     let invlist = this.props.products ? (
       this.props.products.map((element, index) => {
         //console.log(element.id);
@@ -230,11 +230,12 @@ class Products extends Component {
 }
 
 function mapStateToProps(state) {
-  //console.log("state.prods", state.products);
+  console.log("state.total", state.total);
   return {
     products: state.products,
     loading: state.loading,
-    user: state.user
+    user: state.user,
+    total: state.total
   };
 }
 

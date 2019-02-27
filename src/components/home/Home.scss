@@ -22,10 +22,11 @@
   height: 35em;
   width: 35em;
   margin: 5em;
+  padding-top: 5em;
   margin-top: 10em;
   border-radius: 10px;
-  // display: flex;
-  // flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 .givemessage {
   margin: 0 auto;
@@ -33,6 +34,7 @@
   align-content: center;
   display: flex;
   height: 750px;
+  padding-top: 5em;
 }
 .message {
   margin: 0 auto;
@@ -78,6 +80,22 @@
     // height: 60vh;
     margin-top: -10em;
     margin-bottom: -10em;
+  }
+}
+@media (max-height: 800px) {
+  .chick {
+    // height: 20em;
+    // width: 20em;
+    // margin-top: 60em;
+    display: none;
+  }
+  .chickContainer {
+    // height: 60vh;
+    // margin-top: -10em;
+    // margin-bottom: -10em;
+  }
+  .aboutcont {
+    margin-top: -20em;
   }
 }
 @media (max-width: 1330px) {
