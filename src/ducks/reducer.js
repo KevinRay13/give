@@ -138,7 +138,7 @@ export default function reducer(state = initialState, action) {
 
       newArray.splice(action.payload, 1);
 
-      return Object.assign({}, { cart: newArray });
+      return Object.assign({}, state, { cart: newArray });
     case `${GET_ALL_PRODUCTS}_PENDING`:
       return Object.assign({}, state, { loading: true });
     case `${GET_ALL_PRODUCTS}_FULFILLED`:

@@ -7,6 +7,27 @@
   font-family: "Nunito", sans-serif;
   color: #999999;
 }
+/* .desc {
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2em;
+  color: transparent;
+  margin-bottom: -10em;
+  margin-top: 8em;
+  height: 5em;
+  z-index: 2000;
+}
+.desc:hover,
+.infoCover {
+  display: fixed;
+  color: black;
+}
+.infoCover {
+  background-color: transparent;
+}
+.infoCover:hover {
+  /* display: block; */
+/* background-color: rgba(255, 255, 255, 0.692);
+}  */
 .popitems {
   display: flex;
   flex-wrap: wrap;
@@ -14,7 +35,7 @@
   height: auto;
   padding-bottom: 6em;
   padding-top: 5em;
-  width: 70vw;
+  width: 80vw;
   margin: 0 auto;
   justify-content: space-evenly;
   font-family: "Nunito", sans-serif;
@@ -174,6 +195,10 @@ img {
 .deleteBtn {
   background-image: linear-gradient(to right, red 0%, #ce0814 51%, red 100%);
 }
+.deleteBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
 .purchaseBtn:focus {
   outline: none;
   box-shadow: none;
@@ -188,10 +213,7 @@ img {
   font-family: "Nunito", sans-serif;
   font-size: 1.2em;
 }
-.desc {
-  /* font-family: "Nunito", sans-serif;
-  font-size: 1.2em; */
-}
+
 .purchaseBtn {
   width: 13em;
   font-family: "Nunito", sans-serif;

@@ -1,16 +1,20 @@
 import React, { Component } from "react";
 import "./navbar.scss";
 import { connect } from "react-redux";
-import { logout } from "../../ducks/reducer";
+import { logout, getUser } from "../../ducks/reducer";
 import { Link } from "react-router-dom";
 import Logout from "./Logout";
 import LoginButton from "./LoginButton";
 
 class NavBar extends Component {
+  componentDidMount() {
+    this.props.getUser();
+  }
   render() {
     let loggedIn = this.props.loggedIn;
     let isAdmin = this.props.user.isAdmin;
-    //console.log(this.props.user);
+    // ? this.props.user.isAdmin : null;
+    console.log(this.props.user);
     return (
       <div>
         <div className="navbar-container">
@@ -108,8 +112,15 @@ class NavBar extends Component {
   }
 }
 
-const mapStateToProps = state => state;
+function mapStateToProps(state) {
+  //console.log("state.total", state.total);
+  return {
+    cart: state.cart,
+    user: state.user,
+    loggedIn: state.loggedIn
+  };
+}
 export default connect(
   mapStateToProps,
-  { logout }
+  { logout, getUser }
 )(NavBar);

@@ -1,19 +1,21 @@
 form {
 }
 h4 {
-  color: #ce0814;
+  color: cyan;
   font-size: 0.8em;
+  cursor: pointer;
 }
 .logTitle {
-  margin-top: 5em;
+  margin-top: 10em;
   font-size: 1.6em;
-  color: #ce0814;
+  color: #999;
 }
 .usernameInput,
 .passwordInput {
   border: none;
-  border-bottom: 2px solid #ce0814;
+  border-bottom: 2px solid cyan;
   font-size: 0.9em;
+  background: none;
 }
 .usernameInput:focus {
   outline: none;
@@ -34,7 +36,8 @@ h4 {
   width: 30vw;
   align-content: center;
   align-items: center;
-  border: 2px solid #ce0814;
+  border: 3px solid cyan;
+  background-color: rgba(153, 153, 153, 0.678);
   border-radius: 25px;
   margin-top: 4em;
 }
@@ -111,7 +114,7 @@ label {
   justify-content: space-evenly;
   display: flex;
   height: 3em;
-
+  cursor: pointer;
   margin: 0 auto;
   font-size: 0.8em;
   font-weight: 500;
@@ -121,9 +124,9 @@ label {
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
-  color: white;
+  color: #999;
   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
-  box-shadow: 0 0 10px #ce0814;
+  box-shadow: 0 0 10px cyan;
   border-radius: 10px;
 }
 
@@ -132,12 +135,7 @@ label {
 }
 
 .btn {
-  background-image: linear-gradient(
-    to right,
-    white 0%,
-    #ce0814 51%,
-    white 100%
-  );
+  background-image: linear-gradient(to right, white 0%, cyan 51%, white 100%);
 }
 @media (max-width: 1000px) {
   .logBox {

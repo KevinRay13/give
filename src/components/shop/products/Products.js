@@ -94,29 +94,33 @@ class Products extends Component {
       this.props.products.map((element, index) => {
         //console.log(element.id);
         return (
-          <div key={index} className="products">
-            <img className="caps" src={element.img_url} alt="img here" />
-            <br />
-            <p className="prodName"> {element.product_name}</p>
-            <br />
+          <div className="infoCover">
+            {/* <div className="desc">
+              <p className="">
+                description: <br />
+                {element.description}
+              </p>
+            </div> */}
+            <div key={index} className="products">
+              <img className="caps" src={element.img_url} alt="img here" />
+              <br />
+              <p className="prodName"> {element.product_name}</p>
+              <br />
 
-            {/* <p className="desc">
-              description: <br />
-              {element.description}
-            </p> */}
-            <div>
-              <p className="price"> ${element.price}</p>
-              {this.props.user.isAdmin ? (
-                <input
-                  className="inputs"
-                  type="text"
-                  placeholder="New Price"
-                  value={this.state.newPrice}
-                  onChange={e => this.handleNewPriceChange(e.target.value)}
-                />
-              ) : (
-                <p />
-              )}
+              <div>
+                <p className="price"> ${element.price}</p>
+                {this.props.user.isAdmin ? (
+                  <input
+                    className="inputs"
+                    type="text"
+                    placeholder="New Price"
+                    value={this.state.newPrice}
+                    onChange={e => this.handleNewPriceChange(e.target.value)}
+                  />
+                ) : (
+                  <p />
+                )}
+              </div>
             </div>
             <button
               className="purchaseBtn"

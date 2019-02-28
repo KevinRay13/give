@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { removeFromCart, getCart } from "../../ducks/reducer";
+import { removeFromCart, getCart, getUser } from "../../ducks/reducer";
 import StripeBtn from "../stripe/StripeBtn";
 import "./shoppingCart.css";
 
@@ -21,6 +21,7 @@ class Cart extends Component {
 
   componentDidMount() {
     this.props.getCart();
+    this.props.getUser();
   }
   render() {
     //console.log(this.props.cart[0].img_url);
@@ -53,9 +54,13 @@ class Cart extends Component {
         {shoppingCartDisplay[0] ? (
           <div>
             <div className="cartHeadCont">
-              <h3 className="cartHead">Your Cart</h3>
+              {/* <h3 className="cartHead">Your Cart</h3> */}
             </div>
-            <div className="productsCont">{shoppingCartDisplay}</div>
+
+            <div className="productsCont">
+              <h3 className="cartHead">Your Cart</h3>
+              {shoppingCartDisplay}
+            </div>
             <div className="orderSummary">
               <p className="summaryTitle">Order Summary</p>
               <p className="subtotal"> Subtotal: ${this.props.total} </p>
@@ -64,7 +69,7 @@ class Cart extends Component {
           </div>
         ) : (
           <div className="go-buy-something">
-            <h1>Your shopping cart is empty</h1>
+            <h1>Your shopping cart appears to be empty</h1>
           </div>
         )}
       </div>
@@ -75,11 +80,12 @@ class Cart extends Component {
 function mapStateToProps(state) {
   return {
     cart: state.cart,
-    total: state.total
+    total: state.total,
+    user: state.user
   };
 }
 
 export default connect(
   mapStateToProps,
-  { removeFromCart, getCart }
+  { removeFromCart, getCart, getUser }
 )(Cart);
