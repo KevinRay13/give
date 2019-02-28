@@ -1,0 +1,91 @@
+.givePage {
+  font-family: "Nunito", sans-serif;
+}
+.PIF {
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  font-size: 6em;
+  width: 60vw;
+}
+.giveBanner {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-bottom: -7px;
+  letter-spacing: 5px;
+}
+.contributions {
+  color: #999999;
+  font-size: 3em;
+}
+.giveBannerImg {
+  height: 500px;
+}
+.heartImage {
+  height: 8em;
+  width: 10em;
+}
+.fund {
+  margin-top: 0;
+  width: 100%;
+  //   background-color: #99999975;
+  display: flex;
+  justify-content: space-evenly;
+}
+.fundBox {
+  margin-top: 5em;
+  margin-bottom: 5em;
+  border: 3px solid red;
+  width: 20em;
+  background-color: #99999975;
+  border-radius: 150px;
+}
+.money {
+  color: white;
+  margin: 0 auto;
+  letter-spacing: 4px;
+}
+.DG {
+  color: white;
+  margin: 0 auto;
+  padding-bottom: 1em;
+  letter-spacing: 5px;
+}
+.bullseyeImage {
+  height: 6em;
+  width: 6em;
+  margin: 1.2em;
+  margin-left: 1.3em;
+}
+.charityBox {
+  width: 20em;
+  height: 20em;
+  margin: 2em;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.charityLogo {
+  height: 12em;
+  width: 15em;
+  border-radius: 25px;
+}
+.charityCont {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+}
+@media (max-width: 720px) {
+  .PIF {
+    left: 30%;
+    top: 60%;
+    font-size: 4em;
+  }
+}

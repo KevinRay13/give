@@ -8,6 +8,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/home/Home";
 import LogReg from "./components/login/LogReg";
 import AdminDashboard from "./components/login/AdminDashboard";
+import Give from "./components/give/Give";
 
 class App extends Component {
   render() {
@@ -33,6 +34,12 @@ class App extends Component {
             path="/adminDash"
             render={() => {
               return <AdminDashboard />;
+            }}
+          />
+          <Route
+            path="/give"
+            render={() => {
+              return <Give />;
             }}
           />
         </Switch>

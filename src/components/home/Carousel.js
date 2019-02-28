@@ -69,9 +69,9 @@ export default class SimpleSlider extends React.Component {
             <Link to="/shop" className="">
               <img className="caps" src={element.img_url} alt="img here" />
             </Link>
-            <h3> {element.product_name}</h3>
-            <h3>description: {element.description}</h3>
-            <h3>price: {element.price}</h3>
+            <h2> {element.product_name}</h2>
+            {/* <h3>description: {element.description}</h3> */}
+            <h3 className="carPrice">${element.price}</h3>
           </div>
         );
       })

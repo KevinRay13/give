@@ -5,6 +5,7 @@
   margin: 2em;
   margin-top: 5em;
   font-family: "Nunito", sans-serif;
+  color: #999999;
 }
 .popitems {
   display: flex;
@@ -207,17 +208,17 @@ img {
   text-transform: uppercase;
   transition: 0.9s;
   background-size: 210% auto;
-  color: #ce0814;
+  color: #999999;
   /* text-shadow: 0px 0px 10px rgba(0,0,0,0.2);*/
   /* box-shadow: 0 0 10px #0af3e7; */
   border-radius: 10px;
-  border: 1px solid red;
+  border: 1px solid #999999;
 }
 
 .purchaseBtn:hover {
   background-position: right center; /* change the direction of the change here */
 
-  width: 13.1em;
+  /* width: 13.1em; */
 }
 
 .purchaseBtn {
@@ -227,4 +228,9 @@ img {
     #0af3e7 51%,
     white 100%
   );
+}
+colors {
+  color: #999999;
+  color: #669999;
+  color: #003333;
 }

@@ -17,7 +17,7 @@
   bottom: 0;
   margin-bottom: 20em;
   margin-right: 1em;
-  border: 2px solid #4f5858;
+  border: 2px solid #999999;
   padding: 1em;
   padding-top: 1.5em;
   height: 12em;
@@ -33,19 +33,20 @@
   display: flex;
   /* align-self: left; */
   font-size: 2em;
-  text-decoration: underline;
+  text-decoration: underline cyan;
   /* border-bottom: 1px solid #4f5858; */
-  color: #4f5858;
+  color: #999999;
   font-family: "Nunito", sans-serif;
 }
 .subtotal {
   display: flex;
   font-size: 1.2em;
+  color: #999999;
   font-family: "Nunito", sans-serif;
 }
 .productsCart {
   display: flex;
-  color: #4f5858;
+  color: #999999;
   flex-direction: row;
   justify-content: space-around;
   float: left;
@@ -73,9 +74,9 @@
 }
 .cartHead {
   margin-top: 5em;
-  color: #4f5858;
-  border-bottom: 2px solid #4f5858;
-  width: 20vw;
+  color: #999999;
+  border-bottom: 2px solid #999999;
+  width: 15vw;
   /* display: flex;
   justify-content: space-around; */
   /* margin-bottom: -10em; */

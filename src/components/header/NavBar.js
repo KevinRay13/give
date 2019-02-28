@@ -31,6 +31,11 @@ class NavBar extends Component {
                   Shop
                 </Link>
               </li>
+              <li className="">
+                <Link to="/give" className="link">
+                  Give
+                </Link>
+              </li>
               {isAdmin ? (
                 <li className="link">
                   <Link to="/adminDash" className="link">
@@ -40,6 +45,7 @@ class NavBar extends Component {
               ) : (
                 <p />
               )}
+
               {/* <li className="link">
                 <Link to="/login" className="link">
                   Login
