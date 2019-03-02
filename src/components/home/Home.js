@@ -31,6 +31,7 @@ class Home extends Component {
         <div className="cara">
           <Carousel />
         </div>
+        <div className="space" />
         <div className="aboutcont">
           <div className="chickContainer">
             <img

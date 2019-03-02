@@ -75,7 +75,7 @@ class NavBar extends Component {
           <div className="cart-container">
             <div className="loggedCont">
               <div to="/login" className="login" id="log">
-                <div>
+                <div className="btnCont">
                   {loggedIn ? (
                     <Logout />
                   ) : (

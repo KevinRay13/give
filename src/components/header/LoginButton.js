@@ -6,7 +6,7 @@ import "./navbar.scss";
 class LoginButton extends Component {
   render() {
     return (
-      <div>
+      <div className="btnCont">
         {/* <Link to="/login" className="login"> */}
         <button className="logout">Login</button>
         {/* </Link> */}
