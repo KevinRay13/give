@@ -13,13 +13,10 @@ const pay_controller = require("./controllers/payment_controller");
 const path = require("path");
 
 const app = express();
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
 
 app.use(json());
 app.use(cors());
-// app.use(express.static(`${__dirname}/../build`));
+app.use(express.static(`${__dirname}/../build`));
 app.use(
   session({
     resave: true,
@@ -95,5 +92,8 @@ app.post("/payment", pay_controller.takePayment);
 //   });
 //   return app;
 // };
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.listen(5050, () => console.log(`listening on port ${5050}`));
