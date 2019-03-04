@@ -17,6 +17,11 @@
 .chickContainer {
   @include flex;
   justify-content: space-around;
+  // .space {
+  //   position: fixed;
+  //   width: 100%;
+  //   height: 30em;
+  // }
 }
 .chick {
   height: 35em;
@@ -27,6 +32,11 @@
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+}
+.space {
+  // position: fixed;
+  width: 100%;
+  margin: 15em;
 }
 .givemessage {
   margin: 0 auto;
