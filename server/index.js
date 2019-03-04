@@ -13,10 +13,13 @@ const pay_controller = require("./controllers/payment_controller");
 const path = require("path");
 
 const app = express();
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 app.use(json());
 app.use(cors());
-app.use(express.static(`${__dirname}/../build`));
+// app.use(express.static(`${__dirname}/../build`));
 app.use(
   session({
     resave: true,
@@ -46,9 +49,6 @@ massive(process.env.CONNECTION_STRING)
 // module.exports = configureRoutes;
 
 //app.use(checkForSession);
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
 
 //user authentication
 app.post("/auth/register", authCtrl.register);

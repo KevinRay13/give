@@ -62,6 +62,7 @@ export default class SimpleSlider extends React.Component {
         // instead of a settings object
       ]
     };
+    // console.log(this.state.hats)
     let hatlist = this.state.hats ? (
       this.state.hats.map((element, index) => {
         return (
