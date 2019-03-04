@@ -53,7 +53,7 @@ class Products extends Component {
   }
   createProduct() {
     axios
-      .post("http://localhost:5050/admin/inventory", {
+      .post("/admin/inventory", {
         img_url: this.state.img_url,
         product_name: this.state.product_name,
         price: this.state.price,
@@ -74,7 +74,7 @@ class Products extends Component {
   }
   editPrice(id) {
     axios
-      .put(`http://localhost:5050/admin/inventory/${id}`, {
+      .put(`/admin/inventory/${id}`, {
         price: this.state.newPrice
       })
 
