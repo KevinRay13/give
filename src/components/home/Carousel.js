@@ -4,7 +4,7 @@ import "./carousel.scss";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-const api = "http://localhost:5050";
+//const api = "http://localhost:5050";
 
 export default class SimpleSlider extends React.Component {
   constructor() {
@@ -15,7 +15,7 @@ export default class SimpleSlider extends React.Component {
   }
   componentWillMount() {
     axios
-      .get(api + "/inventory/products")
+      .get("/inventory/products")
       .then(response => {
         this.setState({
           hats: response.data

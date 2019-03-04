@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import "./AdminDashboard.scss";
 
-const api = "http://localhost:5050";
+// const api = "http://localhost:5050";
 
 class AdminDashboard extends Component {
   constructor() {
@@ -13,7 +13,7 @@ class AdminDashboard extends Component {
   }
   componentDidMount() {
     axios
-      .get(api + "/admin/orders")
+      .get("/admin/orders")
       .then(response => {
         //console.log(response.data);
         this.setState({
