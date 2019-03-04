@@ -141,5 +141,6 @@ label {
   .logBox {
     border: none;
     width: auto;
+    background: none;
   }
 }
