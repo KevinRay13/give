@@ -6,7 +6,8 @@
   @include flex;
   font-family: "Nunito", sans-serif;
   justify-content: space-between;
-  height: 9vh;
+  // FIXME
+  //height: 9vh;
   width: 100vw;
   align-items: center;
   margin: 0 auto;
@@ -95,6 +96,7 @@
   width: 2em;
   display: none;
 }
+//NOTE maybe unnecesary. possibly give link-main padding/ width.
 .logo-container {
   width: 30vw;
 }
