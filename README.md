@@ -5,6 +5,7 @@ Give is a personal passion project of mine. Give's goal is to give half of profi
 
 
 ### Screenshots
+![Home](/Givehome.png)
 
 
 
